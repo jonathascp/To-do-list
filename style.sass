@@ -1,0 +1,54 @@
+@use 'variables'
+@use 'mixins'
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+    font-family: variables.$font-family
+
+body
+    width: 100%
+    height: 100vh
+    background: variables.$background no-repeat center
+    background-size: cover
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+
+    .main-container
+        width: 600px
+        height: 500px
+        background-color: variables.$secundary-color
+        padding: 11px
+        border-radius: 5px
+
+        & form
+            @include mixins.flex-container-column
+            
+            label 
+                font-size: 1.2em
+
+            input,select
+                width: 100%
+                margin: 3px
+                outline: none
+                padding: 3px
+                font-size: 1.1em 
+
+            input[type="submit"]
+                border: none
+                background-color: variables.$primary-color
+                color: variables.$secundary-color
+                padding: 10px
+                border-radius: 4px
+                font-size: 2em
+                font-weight: bold
+                cursor: pointer
+    
+
+            
+        
+
+
+    

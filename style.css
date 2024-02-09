@@ -1,0 +1,50 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background: url("./assets/Background.jpg") no-repeat center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+body .main-container {
+  width: 600px;
+  height: 500px;
+  background-color: #fff;
+  padding: 11px;
+  border-radius: 5px;
+}
+body .main-container form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+body .main-container form label {
+  font-size: 1.2em;
+}
+body .main-container form input, body .main-container form select {
+  width: 100%;
+  margin: 3px;
+  outline: none;
+  padding: 3px;
+  font-size: 1.1em;
+}
+body .main-container form input[type=submit] {
+  border: none;
+  background-color: #9100d4;
+  color: #fff;
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 2em;
+  font-weight: bold;
+  cursor: pointer;
+}/*# sourceMappingURL=style.css.map */
