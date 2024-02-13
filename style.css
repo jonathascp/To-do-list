@@ -17,7 +17,7 @@ body {
 }
 body .main-container {
   width: 600px;
-  height: 500px;
+  margin: 20px 0px;
   background-color: #fff;
   padding: 11px;
   border-radius: 5px;
@@ -31,7 +31,7 @@ body .main-container form {
 body .main-container form label {
   font-size: 1.2em;
 }
-body .main-container form input, body .main-container form select {
+body .main-container form input {
   width: 100%;
   margin: 3px;
   outline: none;
@@ -46,5 +46,44 @@ body .main-container form input[type=submit] {
   border-radius: 4px;
   font-size: 2em;
   font-weight: bold;
+  cursor: pointer;
+}
+
+.todo-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 10px;
+}
+.todo-container-title {
+  font-size: 1.7em;
+}
+.todo-container-content {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-todo {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3px;
+  border-radius: 3px;
+}
+
+.container-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+.container-button button {
+  padding: 4px;
+  border: none;
+  font-size: 1em;
   cursor: pointer;
 }/*# sourceMappingURL=style.css.map */

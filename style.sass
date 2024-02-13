@@ -1,5 +1,6 @@
 @use 'variables'
 @use 'mixins'
+
 *
     margin: 0
     padding: 0
@@ -18,7 +19,7 @@ body
 
     .main-container
         width: 600px
-        height: 500px
+        margin: 20px 0px
         background-color: variables.$secundary-color
         padding: 11px
         border-radius: 5px
@@ -29,7 +30,7 @@ body
             label 
                 font-size: 1.2em
 
-            input,select
+            input
                 width: 100%
                 margin: 3px
                 outline: none
@@ -45,10 +46,33 @@ body
                 font-size: 2em
                 font-weight: bold
                 cursor: pointer
-    
 
-            
+.todo-container
+    @include mixins.flex-container-column
+    margin-top: 10px
+
+
+    &-title
+        font-size: 1.7em
+
+    &-content
+        width: 100%
+        display: flex
+        justify-content: space-between
+        align-items: center
+
+.card-todo
+    width: 100%
+    @include mixins.flex-container-row
+    padding: 3px
+    border-radius: 3px
+
+.container-button
+    @include mixins.flex-container-row-buttons
+
+    button 
+        padding: 4px
+        border: none
+        font-size: 1em
+        cursor: pointer
         
-
-
-    

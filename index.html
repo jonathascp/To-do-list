@@ -16,18 +16,18 @@
 
 <body>
     <main class="main-container">
+        <h1 class="todo-title">To do list</h1>
         <form class="main-form">
             <label for="nomeTarefa">Nome da Tarefa</label>
-            <input type="text" id="nomeTarefa">
-            <label for="tipoTarefa">Tipo de tarefa</label>
-            <select id="tipoTarefa">
-                <option value="Estudo">Estudo</option>
-                <option value="Trabalho">Trabalho</option>
-                <option value="Hobbi">Hobbi</option>
-            </select>
+            <input type="text" id="nomeTarefa" required>
             <input type="submit" value="Anotar">
         </form>
-        <div class="todo-container"></div>
+        <div class="todo-container">
+            <h2 class="todo-container-title">To do</h2>
+            <div class="todo-container-content"></div>
+        </div>
+        </div>
+        
     </main>
 </body>
 
