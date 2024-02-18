@@ -71,8 +71,16 @@ body
     @include mixins.flex-container-row-buttons
 
     button 
-        padding: 4px
         border: none
         font-size: 1em
         cursor: pointer
-        
+
+        i
+            pointer-events: none
+
+.completed
+    text-decoration: line-through
+
+.clear
+    display: none
+

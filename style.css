@@ -82,8 +82,18 @@ body .main-container form input[type=submit] {
   gap: 30px;
 }
 .container-button button {
-  padding: 4px;
   border: none;
   font-size: 1em;
   cursor: pointer;
+}
+.container-button button i {
+  pointer-events: none;
+}
+
+.completed {
+  text-decoration: line-through;
+}
+
+.clear {
+  display: none;
 }/*# sourceMappingURL=style.css.map */
