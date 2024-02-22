@@ -65,6 +65,30 @@ body .main-container form input[type=submit] {
   justify-content: space-between;
   align-items: center;
 }
+.todo-container-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+.todo-container-buttons button {
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 0px 4px;
+  border-radius: 4px;
+  transition: 0.3s;
+}
+
+.done, .notDone {
+  color: #9100d4;
+}
+
+.done:hover, .notDone:hover {
+  background-color: #9100d4;
+  color: #fff;
+}
 
 .card-todo {
   width: 100%;
@@ -73,6 +97,7 @@ body .main-container form input[type=submit] {
   align-items: center;
   padding: 3px;
   border-radius: 3px;
+  margin: 4px;
 }
 
 .container-button {
@@ -82,18 +107,34 @@ body .main-container form input[type=submit] {
   gap: 30px;
 }
 .container-button button {
+  width: 30px;
   border: none;
   font-size: 1em;
   cursor: pointer;
+  transition: 0.3s;
+  background-color: transparent;
+}
+.container-button button:hover {
+  background-color: #9100d4;
+  color: #fff;
 }
 .container-button button i {
   pointer-events: none;
 }
 
 .completed {
-  text-decoration: line-through;
+  background-color: rgba(145, 0, 212, 0.3411764706);
 }
 
-.clear {
+.onGoing {
+  background-color: #fff;
+}
+
+.hide {
   display: none;
+}
+
+.selecionado {
+  background-color: #9100d4;
+  color: #fff;
 }/*# sourceMappingURL=style.css.map */

@@ -1,5 +1,7 @@
 const container = document.querySelector(".todo-container");
 const btn_feito = document.querySelector(".btn_feito");
+const btn_done = document.querySelector(".done");
+const btn_notDone = document.querySelector(".notDone");
 
 document.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -19,6 +21,7 @@ document.addEventListener("submit", (e) => {
     div_button.appendChild(btn_excluir);
 
     div.classList.add("card-todo");
+    div.classList.add("onGoing");
     div_button.classList.add("container-button");
     
     title.innerText = nomeDaTarefa.value; 
@@ -34,13 +37,40 @@ document.addEventListener("click",(e) =>
     if(elemento.classList.contains("btnFeito"))
     {
         const elementoDiv = elemento.closest(".card-todo");
-        elementoDiv.classList.add("completed");
+        elementoDiv.classList.toggle("completed");
+        elementoDiv.classList.toggle("onGoing");
+        
     }
 
     if(elemento.classList.contains("btnExcluir"))
     {
         const elementoDiv = elemento.closest(".card-todo");
-        elementoDiv.classList.add("clear");
+        elementoDiv.remove();
     }
 })
+
+
+function buttonsFunctions(button,classe)
+{
+    button.addEventListener("click",() => 
+    {
+        selected(button);
+        const todosDone = document.querySelectorAll(".card-todo");
+        todosDone.forEach((todo)=> 
+        {
+            if(!todo.classList.contains(classe))
+            {
+                todo.classList.toggle("hide");
+            }
+        })
+    })
+}
+
+function selected(botao)
+{
+    botao.classList.toggle("selecionado");
+}
+
+buttonsFunctions(btn_done,"completed");
+buttonsFunctions(btn_notDone,"onGoing");
   

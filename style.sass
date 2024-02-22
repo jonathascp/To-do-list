@@ -20,7 +20,7 @@ body
     .main-container
         width: 600px
         margin: 20px 0px
-        background-color: variables.$secundary-color
+        background-color: variables.$cor-secundaria
         padding: 11px
         border-radius: 5px
 
@@ -39,8 +39,8 @@ body
 
             input[type="submit"]
                 border: none
-                background-color: variables.$primary-color
-                color: variables.$secundary-color
+                background-color: variables.$cor-primaria
+                color: variables.$cor-secundaria
                 padding: 10px
                 border-radius: 4px
                 font-size: 2em
@@ -50,8 +50,7 @@ body
 .todo-container
     @include mixins.flex-container-column
     margin-top: 10px
-
-
+    
     &-title
         font-size: 1.7em
 
@@ -61,26 +60,67 @@ body
         justify-content: space-between
         align-items: center
 
+    &-buttons
+        @include mixins.flex-container-row-buttons
+        
+        
+        button
+            border: none
+            cursor: pointer
+            font-weight: bold
+            font-size: 1rem
+            padding: 0px 4px
+            border-radius: 4px
+            transition: .3s
+
+.done, .notDone
+    color: variables.$cor-primaria
+
+
+.done:hover, .notDone:hover
+    background-color: variables.$cor-primaria
+    color: variables.$cor-secundaria 
+
+
 .card-todo
     width: 100%
     @include mixins.flex-container-row
     padding: 3px
     border-radius: 3px
+    margin: 4px
 
 .container-button
     @include mixins.flex-container-row-buttons
 
     button 
+        width: 30px
         border: none
         font-size: 1em
         cursor: pointer
+        transition: .3s
+        background-color: transparent
+        
+        
+        &:hover
+           background-color: variables.$cor-primaria
+           color: #fff
 
         i
             pointer-events: none
 
-.completed
-    text-decoration: line-through
 
-.clear
+.completed
+    background-color: variables.$cor-terciaria
+
+.onGoing
+    background-color: variables.$cor-secundaria
+
+.hide
     display: none
+
+.selecionado
+    background-color: variables.$cor-primaria
+    color: variables.$cor-secundaria
+
+
 
