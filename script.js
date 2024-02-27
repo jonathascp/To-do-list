@@ -27,7 +27,6 @@ document.addEventListener("submit", (e) => {
     title.innerText = nomeDaTarefa.value; 
     btn_feito.classList.add("btnFeito");
     btn_excluir.classList.add("btnExcluir");
-    title.classList.add("todo-title");
     btn_feito.innerHTML = '<i class="fa-solid fa-check"></i>';
     btn_excluir.innerHTML = '<i class="fa-solid fa-xmark"></i>';
 })  
@@ -38,7 +37,9 @@ document.addEventListener("click",(e) =>
     if(elemento.classList.contains("btnFeito"))
     {
         const elementoDiv = elemento.closest(".card-todo");
-        trocarDeClasse(elementoDiv,"completed","onGoing");
+        elementoDiv.classList.toggle("completed");
+        elementoDiv.classList.toggle("onGoing");
+        
     }
 
     if(elemento.classList.contains("btnExcluir"))
@@ -68,12 +69,6 @@ function buttonsFunctions(button,classe)
 function selected(botao)
 {
     botao.classList.toggle("selecionado");
-}
-
-function trocarDeClasse(elemento,classe1,classe2)
-{
-    elemento.classList.toggle(classe1);
-    elemento.classList.toggle(classe2);
 }
 
 buttonsFunctions(btn_done,"completed");
