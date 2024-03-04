@@ -2,6 +2,7 @@ const container = document.querySelector(".todo-container");
 const btn_feito = document.querySelector(".btn_feito");
 const btn_done = document.querySelector(".done");
 const btn_notDone = document.querySelector(".notDone");
+const select = document.getElementById("select");
 
 document.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -49,28 +50,55 @@ document.addEventListener("click",(e) =>
     }
 })
 
-
-function buttonsFunctions(button,classe)
+function filterTodos(filter)
 {
-    button.addEventListener("click",() => 
+    const todos = document.querySelectorAll(".card-todo");
+
+    switch(filter)
     {
-        selected(button);
-        const todosDone = document.querySelectorAll(".card-todo");
-        todosDone.forEach((todo)=> 
-        {
-            if(!todo.classList.contains(classe))
-            {
-                todo.classList.toggle("hide");
-            }
-        })
-    })
+        case "all":
+            todos.forEach((todo) => {
+                todo.style.display = "flex";
+            })
+        break;
+
+        case "done":
+            todos.forEach((todo) => {
+                if(todo.classList.contains("completed"))
+                {
+                    todo.style.display = "flex";
+                }
+                else
+                {
+                    todo.style.display = "none";
+                }
+            })
+        break;
+
+        case "onGoing":
+            todos.forEach((todo) => {
+                if(!todo.classList.contains("completed"))
+                {
+                    todo.style.display = "flex";
+                }
+                else
+                {
+                    todo.style.display = "none";
+                }
+            })
+        break;
+    }
 }
 
-function selected(botao)
-{
-    botao.classList.toggle("selecionado");
-}
+select.addEventListener("change",(e) =>{
+    const filterValue = e.target.value;
+    filterTodos(filterValue);
+})
 
-buttonsFunctions(btn_done,"completed");
-buttonsFunctions(btn_notDone,"onGoing");
-  
+filterTodos(select);
+
+// function saveTodo()
+// {
+//     const todos = document.querySelectorAll(".card-todo");
+//     const todosSaved = localStorage.setItem("todos",JSON.stringify(todos));
+// }
